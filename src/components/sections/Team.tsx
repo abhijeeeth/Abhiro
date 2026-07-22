@@ -5,12 +5,12 @@ import GlowCard from "../ui/GlowCard";
 
 const team = [
   {
-    name: "Abhiroop",
+    name: "Abhijith Shaji",
     role: "Founder & Full Stack Developer",
     bio: "Passionate about creating accessible, beautiful, and hyper-optimized websites. Over 5 years of engineering experience.",
     skills: ["Next.js", "TypeScript", "Node.js", "Docker"],
-    linkedin: "https://linkedin.com",
-    github: "https://github.com",
+    linkedin: "https://www.linkedin.com/in/stabhijith/",
+    github: "https://github.com/abhijeeeth",
     avatarGrad: "from-emerald-500 to-green-600",
   },
   {

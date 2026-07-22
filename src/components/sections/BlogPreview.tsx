@@ -9,7 +9,7 @@ const articles = [
     title: "How Much Does a Website Cost in 2026?",
     category: "Pricing Guides",
     date: "July 20, 2026",
-    author: "Abhiroop",
+    author: "Abhijith Shaji",
     excerpt: "Demystifying agency rates, freelancer quotes, and cheap template plans. Find out how to get the most value for your budget.",
     grad: "from-blue-600/10 to-indigo-600/10",
   },

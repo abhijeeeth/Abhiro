@@ -26,8 +26,8 @@ const schemaData = {
       "url": "https://abhiro.com",
       "logo": "https://abhiro.com/logo.png",
       "sameAs": [
-        "https://github.com",
-        "https://linkedin.com",
+        "https://github.com/abhijeeeth",
+        "https://www.linkedin.com/in/stabhijith/",
         "https://twitter.com"
       ]
     },
@@ -36,7 +36,7 @@ const schemaData = {
       "@id": "https://abhiro.com/#localbusiness",
       "name": "Abhiro Web Development Agency",
       "url": "https://abhiro.com",
-      "telephone": "+919999999999",
+      "telephone": "+916238545696",
       "priceRange": "INR",
       "address": {
         "@type": "PostalAddress",

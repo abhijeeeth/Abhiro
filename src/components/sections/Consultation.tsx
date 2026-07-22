@@ -48,7 +48,7 @@ export default function Consultation() {
   };
 
   const handleWhatsAppBooking = () => {
-    const phoneNumber = "919999999999";
+    const phoneNumber = "916238545696";
     const message = encodeURIComponent("Hi Abhiro! I'd like to book a free web consultation. I want to discuss my website options.");
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
   };
@@ -81,7 +81,7 @@ export default function Consultation() {
                   </div>
                   <div>
                     <div className="text-[10px] uppercase font-bold text-muted font-mono">Call / Whatsapp</div>
-                    <a href="tel:+919999999999" className="text-white hover:text-primary transition-colors font-medium">+91 99999 99999</a>
+                    <a href="tel:+916238545696" className="text-white hover:text-primary transition-colors font-medium">+91 62385 45696</a>
                   </div>
                 </div>
 
@@ -91,7 +91,7 @@ export default function Consultation() {
                   </div>
                   <div>
                     <div className="text-[10px] uppercase font-bold text-muted font-mono">Email Address</div>
-                    <a href="mailto:hello@abhiro.com" className="text-white hover:text-primary transition-colors font-medium">hello@abhiro.com</a>
+                    <a href="mailto:st.abhijithh@gmail.com" className="text-white hover:text-primary transition-colors font-medium">st.abhijithh@gmail.com</a>
                   </div>
                 </div>
 
