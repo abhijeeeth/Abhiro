@@ -67,6 +67,24 @@ const team = [
     github: "https://github.com",
     avatarGrad: "from-amber-500 to-orange-600",
   },
+  {
+    name: "Anagha Vijayan",
+    role: "Operations Coordinator and Social Media Head",
+    bio: "Managing day-to-day agency operations, coordinating projects, and leading creative social media strategies to drive brand presence.",
+    skills: ["Project Management", "Social Media Strategy", "Content Planning", "Client Coordination"],
+    linkedin: "https://linkedin.com",
+    github: "https://github.com",
+    avatarGrad: "from-fuchsia-500 to-pink-600",
+  },
+  {
+    name: "Susmitha B S",
+    role: "Content Writer",
+    bio: "Crafting high-quality, engaging content, website copy, and SEO-optimized articles to tell compelling brand stories.",
+    skills: ["Copywriting", "Content Strategy", "SEO Writing", "Creative Writing"],
+    linkedin: "https://linkedin.com",
+    github: "https://github.com",
+    avatarGrad: "from-sky-400 to-blue-500",
+  },
 ];
 
 export default function Team() {

@@ -5,6 +5,7 @@ import LenisProvider from "@/components/LenisProvider";
 import CustomCursor from "@/components/ui/CustomCursor";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
+import CallButton from "@/components/ui/CallButton";
 import BackToTop from "@/components/ui/BackToTop";
 
 const inter = Inter({
@@ -32,6 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "makePortfolio.in | Premium Web Development & Design Agency",
     description: "Custom, high-converting websites starting from ₹3,999.",
+    url: "https://makeportfolio.in",
   },
 };
 
@@ -41,14 +43,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark scroll-smooth">
+    <html lang="en" className="dark scroll-smooth" suppressHydrationWarning>
       <body
         className={`${inter.variable} font-sans antialiased bg-background text-foreground`}
+        suppressHydrationWarning
       >
         <LenisProvider>
           <ScrollProgress />
           <CustomCursor />
           {children}
+          <CallButton />
           <WhatsAppButton />
           <BackToTop />
         </LenisProvider>
