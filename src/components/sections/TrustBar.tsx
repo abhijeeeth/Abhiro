@@ -11,14 +11,13 @@ const stats = [
 ];
 
 const clientLogos = [
-  "Acme Corp",
-  "Apex Lab",
-  "Nova Studio",
-  "ByteTech",
-  "Pulse Agency",
-  "Vertex Digital",
-  "Quantum Systems",
-  "Alpha Brand",
+  "FarmSpice",
+  "Morris English Academy",
+  "Momeira Group",
+  "Roshni Boutiques",
+  "Sachu & Preksha",
+  "Lotus Dental Clinic",
+  "Organic Store Inc",
 ];
 
 export default function TrustBar() {

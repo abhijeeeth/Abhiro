@@ -144,9 +144,15 @@ export default function Consultation() {
                           type="text"
                           placeholder="Your name"
                           {...register("name")}
+                          aria-invalid={errors.name ? "true" : "false"}
+                          aria-describedby={errors.name ? "name-error" : undefined}
                           className="w-full px-4 py-3 rounded-xl bg-zinc-900 border border-card-border/80 text-white placeholder-zinc-500 text-sm focus:outline-none focus:border-primary transition-all duration-300"
                         />
-                        {errors.name && <span className="text-red-500 text-xs">{errors.name.message}</span>}
+                        {errors.name && (
+                          <span id="name-error" role="alert" className="text-red-500 text-xs">
+                            {errors.name.message}
+                          </span>
+                        )}
                       </div>
 
                       {/* Email */}
@@ -157,9 +163,15 @@ export default function Consultation() {
                           type="email"
                           placeholder="you@example.com"
                           {...register("email")}
+                          aria-invalid={errors.email ? "true" : "false"}
+                          aria-describedby={errors.email ? "email-error" : undefined}
                           className="w-full px-4 py-3 rounded-xl bg-zinc-900 border border-card-border/80 text-white placeholder-zinc-500 text-sm focus:outline-none focus:border-primary transition-all duration-300"
                         />
-                        {errors.email && <span className="text-red-500 text-xs">{errors.email.message}</span>}
+                        {errors.email && (
+                          <span id="email-error" role="alert" className="text-red-500 text-xs">
+                            {errors.email.message}
+                          </span>
+                        )}
                       </div>
                     </div>
 
@@ -172,9 +184,15 @@ export default function Consultation() {
                           type="tel"
                           placeholder="Contact phone"
                           {...register("phone")}
+                          aria-invalid={errors.phone ? "true" : "false"}
+                          aria-describedby={errors.phone ? "phone-error" : undefined}
                           className="w-full px-4 py-3 rounded-xl bg-zinc-900 border border-card-border/80 text-white placeholder-zinc-500 text-sm focus:outline-none focus:border-primary transition-all duration-300"
                         />
-                        {errors.phone && <span className="text-red-500 text-xs">{errors.phone.message}</span>}
+                        {errors.phone && (
+                          <span id="phone-error" role="alert" className="text-red-500 text-xs">
+                            {errors.phone.message}
+                          </span>
+                        )}
                       </div>
 
                       {/* Business Select */}
@@ -183,6 +201,8 @@ export default function Consultation() {
                         <select
                           id="business"
                           {...register("business")}
+                          aria-invalid={errors.business ? "true" : "false"}
+                          aria-describedby={errors.business ? "business-error" : undefined}
                           className="w-full px-4 py-3 rounded-xl bg-zinc-900 border border-card-border/80 text-white text-sm focus:outline-none focus:border-primary transition-all duration-300"
                         >
                           <option value="">Select Option</option>
@@ -194,7 +214,11 @@ export default function Consultation() {
                           <option value="Local Shop">Local Shop</option>
                           <option value="Agency">Agency</option>
                         </select>
-                        {errors.business && <span className="text-red-500 text-xs">{errors.business.message}</span>}
+                        {errors.business && (
+                          <span id="business-error" role="alert" className="text-red-500 text-xs">
+                            {errors.business.message}
+                          </span>
+                        )}
                       </div>
                     </div>
 
@@ -204,6 +228,8 @@ export default function Consultation() {
                       <select
                         id="budget"
                         {...register("budget")}
+                        aria-invalid={errors.budget ? "true" : "false"}
+                        aria-describedby={errors.budget ? "budget-error" : undefined}
                         className="w-full px-4 py-3 rounded-xl bg-zinc-900 border border-card-border/80 text-white text-sm focus:outline-none focus:border-primary transition-all duration-300"
                       >
                         <option value="">Select Option</option>
@@ -211,7 +237,11 @@ export default function Consultation() {
                         <option value="Custom Plan (₹15,999)">Custom Plan (₹15,999)</option>
                         <option value="Enterprise / Other">Enterprise / Custom Request</option>
                       </select>
-                      {errors.budget && <span className="text-red-500 text-xs">{errors.budget.message}</span>}
+                      {errors.budget && (
+                        <span id="budget-error" role="alert" className="text-red-500 text-xs">
+                          {errors.budget.message}
+                        </span>
+                      )}
                     </div>
 
                     {/* Message */}
@@ -222,9 +252,15 @@ export default function Consultation() {
                         rows={4}
                         placeholder="What are your website goals, design ideas, or requested pages?"
                         {...register("message")}
+                        aria-invalid={errors.message ? "true" : "false"}
+                        aria-describedby={errors.message ? "message-error" : undefined}
                         className="w-full px-4 py-3 rounded-xl bg-zinc-900 border border-card-border/80 text-white placeholder-zinc-500 text-sm focus:outline-none focus:border-primary transition-all duration-300 resize-none"
                       />
-                      {errors.message && <span className="text-red-500 text-xs">{errors.message.message}</span>}
+                      {errors.message && (
+                        <span id="message-error" role="alert" className="text-red-500 text-xs">
+                          {errors.message.message}
+                        </span>
+                      )}
                     </div>
 
                     {/* Action buttons */}

@@ -192,7 +192,7 @@ export default function Pricing() {
           <div className="space-y-2">
             <h4 className="text-lg font-bold text-white">Why only ₹3,999 for the Budget Plan?</h4>
             <p className="text-sm text-muted leading-relaxed">
-              We understand starting out is tough. The affordable package uses professionally designed templates previously engineered in-house by our team. Instead of starting from scratch, we customize these templates for your brand details, fonts, color pallet, and content copy. This cuts down design time significantly, allowing us to deliver award-winning premium layout quality at a fraction of standard agency costs.
+              We understand starting out is tough. The affordable package uses professionally designed templates previously engineered in-house by our team. Instead of starting from scratch, we customize these templates for your brand details, fonts, color palette, and content copy. This cuts down design time significantly, allowing us to deliver premium, modern layout quality at a fraction of standard agency costs.
             </p>
           </div>
         </motion.div>

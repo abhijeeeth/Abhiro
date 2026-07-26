@@ -9,37 +9,37 @@ import GlowCard from "../ui/GlowCard";
 
 const testimonials = [
   {
-    name: "Vikram Mehta",
-    company: "Apex local bakery",
-    text: "makePortfolio.in built our landing page in just 4 days. The ₹3,999 pricing felt too good to be true, but the speed, design, and SEO setup exceeded all expectations. Highly recommend their template customization plan!",
+    name: "George Morris",
+    company: "Morris English Academy",
+    text: "We went with the Custom Plan for our academy's site. The Figma wireframing stage was super collaborative, and the final Next.js build loading times are incredible. Our online inquiries grew immediately.",
     rating: 5,
     avatarGrad: "from-blue-500 to-indigo-500",
   },
   {
-    name: "Dr. Ananya Rao",
-    company: "Lotus Dental Clinic",
-    text: "We went with the Custom Plan for our clinic's site. The Figma wireframing stage was super collaborative, and the final Next.js build loading times are incredible. Our bookings are up by 90%!",
+    name: "Zachariah Mathai",
+    company: "FarmSpice Spices",
+    text: "Setting up our online storefront was a breeze. They handled SSL setup, product catalog optimization, and even connected a direct WhatsApp purchase flow. Reliable and prompt post-launch support.",
     rating: 5,
     avatarGrad: "from-teal-500 to-emerald-500",
   },
   {
-    name: "Rahul Verma",
-    company: "Freelance Designer",
-    text: "As a designer, I am very picky about typography and micro-interactions. The team at makePortfolio.in translated my designs into responsive code with clean animations. Absolutely flawless craftsmanship.",
+    name: "Roshni Nair",
+    company: "Roshni Boutiques",
+    text: "As a boutique owner, visual appeal is everything. The team at makePortfolio.in translated our vision into a responsive, elegant fashion catalog with clean animations. Exceeded all expectations!",
     rating: 5,
     avatarGrad: "from-pink-500 to-rose-500",
   },
   {
-    name: "Sneha Patel",
-    company: "Organic Store Inc",
-    text: "Setting up our online storefront was a breeze. They handled SSL setup, payment gateways configuration, and even connected a direct WhatsApp purchase flow. Reliable and prompt post-launch support.",
+    name: "Blesson Varghese",
+    company: "Momeira Group",
+    text: "makePortfolio.in built our corporate site in just a few weeks. The speed, design quality, and technical SEO structure are top-notch. Our brand credibility has definitely been boosted.",
     rating: 5,
     avatarGrad: "from-amber-500 to-orange-500",
   },
   {
-    name: "Kartik Nair",
-    company: "SaaS Platform Founder",
-    text: "Our product launch landing page is lightning fast and ranks highly on Google search out of the box. They implemented organizational schema, sitemaps, and analytics tracking in no time. Great service!",
+    name: "Sachu & Preksha",
+    company: "Personal Brand & Creative Creators",
+    text: "Our personal site is lightning fast and ranks highly on search engines out of the box. They implemented clean scroll transitions, custom SVG shapes, and analytics tracking in no time. Great service!",
     rating: 5,
     avatarGrad: "from-purple-500 to-violet-500",
   },
@@ -74,7 +74,7 @@ export default function Testimonials() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-muted text-base sm:text-lg"
           >
-            Don't just take our word for it. Read how we've helped creators, shop owners, and corporate brands grow their digital presence.
+            Don't just take our word for it. Read genuine feedback from the business owners, creators, and brands who have launched websites with us.
           </motion.p>
         </div>
 
