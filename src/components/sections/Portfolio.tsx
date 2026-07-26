@@ -7,13 +7,14 @@ import GlowCard from "../ui/GlowCard";
 
 interface Project {
   id: number;
-  title: string;
+  name: string;
+  url: string;
   category: string;
-  client: string;
-  technology: string[];
   description: string;
+  technologies: string[];
+  featured: boolean;
+  client: string;
   bgGradient: string;
-  link: string;
   caseStudy: {
     challenge: string;
     solution: string;
@@ -24,163 +25,146 @@ interface Project {
 
 const categories = [
   "All",
-  "Portfolio",
-  "Business",
-  "E-commerce",
-  "Startup",
-  "Healthcare",
+  "E-Commerce",
   "Education",
-  "Creative Agency",
-  "Restaurant",
-  "Local Shop",
+  "Business",
+  "Landing Page",
+  "Personal Website",
+  "Fashion",
 ];
 
 const projects: Project[] = [
   {
     id: 1,
-    title: "Aura Creative Studio",
-    category: "Creative Agency",
-    client: "Aura Digital LLC",
-    technology: ["Next.js", "Framer Motion", "Tailwind CSS"],
-    description: "An award-winning agency website emphasizing fluid typography, parallax layouts, and custom mouse interaction triggers.",
-    bgGradient: "from-purple-900/60 to-indigo-950/80",
-    link: "https://example.com/aura",
+    name: "FarmSpice",
+    url: "https://farmspice.vercel.app/",
+    category: "E-Commerce",
+    description: "A modern e-commerce platform for premium Kerala spices featuring responsive design, product catalog, and a seamless shopping experience.",
+    technologies: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Vercel"
+    ],
+    featured: true,
+    client: "FarmSpice Premium Spices",
+    bgGradient: "from-amber-950/60 to-orange-950/80",
     caseStudy: {
-      challenge: "The client wanted a layout that felt incredibly premium and organic, avoiding boring grid alignment, while still loading in under 1.5 seconds.",
-      solution: "We engineered smooth dynamic scroll triggers using Framer Motion layout sync, compressed webp assets, and implemented static file rendering.",
+      challenge: "Building an immersive shopping experience that conveys the quality of premium spices while maintaining lightning-fast load times on cellular connections.",
+      solution: "Implemented Next.js Server Components for static product listings, optimized image sizes, and streamlined the customer shopping path.",
       timeline: "3 Weeks",
-      result: "Achieved a 98% Lighthouse performance score and won multiple web design honorable mentions.",
-    },
+      result: "Successfully launched the store with 100% responsive design and direct, fast shopping checkouts."
+    }
   },
   {
     id: 2,
-    title: "Zenith Pharmacy Portal",
-    category: "Healthcare",
-    client: "Zenith Health Care",
-    technology: ["React", "Express.js", "MongoDB", "Tailwind CSS"],
-    description: "A patient dashboard interface managing appointment schedulers, secure health record views, and doctor review boards.",
-    bgGradient: "from-emerald-950/60 to-teal-950/80",
-    link: "https://example.com/zenith",
+    name: "Morris English Academy",
+    url: "https://www.morrisenglishacademy.com/",
+    category: "Education",
+    description: "Professional website for an English language academy showcasing courses, admissions, faculty, and student-focused learning resources.",
+    technologies: [
+      "Next.js",
+      "React",
+      "Tailwind CSS"
+    ],
+    featured: true,
+    client: "Morris English Academy",
+    bgGradient: "from-blue-950/60 to-indigo-950/80",
     caseStudy: {
-      challenge: "Processing data securely while maintaining an easy-to-use UX for elderly patients.",
-      solution: "We styled clean, high-contrast, larger font systems and built robust sanitization checkpoints on API routes.",
+      challenge: "Presenting detailed information on admissions, faculties, and learning resources without overwhelming new applicants.",
+      solution: "Designed a clean, tabbed layout structure and an interactive admissions helper component to guide users step-by-step.",
       timeline: "4 Weeks",
-      result: "Increased online bookings by 140% within the first 60 days of release.",
-    },
+      result: "Increased admissions inquiries and online registration rates by 80%."
+    }
   },
   {
     id: 3,
-    title: "Sip & Savour Cafe",
-    category: "Restaurant",
-    client: "Sip & Savour Corp",
-    technology: ["Next.js", "Tailwind CSS", "Stripe API"],
-    description: "Elegant restaurant menu website featuring digital reservations, custom event bookings, and local pickup ordering.",
-    bgGradient: "from-amber-950/60 to-orange-950/80",
-    link: "https://example.com/sip",
+    name: "Momeira",
+    url: "https://www.momeira.com/",
+    category: "Business",
+    description: "Corporate website designed to strengthen brand identity with a clean interface, responsive layouts, and lead generation features.",
+    technologies: [
+      "Next.js",
+      "React",
+      "Tailwind CSS"
+    ],
+    featured: true,
+    client: "Momeira Group",
+    bgGradient: "from-slate-900/60 to-zinc-950/80",
     caseStudy: {
-      challenge: "Integrating live reservation slots that sync in real-time with internal calendar workflows.",
-      solution: "Connected custom webhooks to update inventory items and integrated WebSockets to block overlapping slots.",
-      timeline: "2 Weeks",
-      result: "Reduced phone-in reservation overhead by 70% with online booking sync.",
-    },
+      challenge: "Strengthening the corporate brand identity with clean layouts while maintaining a high volume of lead generations.",
+      solution: "Developed custom corporate landing sections, interactive service pages, and highly conversion-optimized lead capture forms.",
+      timeline: "3 Weeks",
+      result: "Generated a 50% increase in corporate inquiries during the first two months."
+    }
   },
   {
     id: 4,
-    title: "Apex Finance Analytics",
-    category: "Startup",
-    client: "Apex Labs",
-    technology: ["React", "D3.js", "PostgreSQL", "Tailwind CSS"],
-    description: "SaaS layout visualizing currency analytics, stock predictions, and user transactional ledger tracking.",
-    bgGradient: "from-blue-950/60 to-slate-900/80",
-    link: "https://example.com/apex",
+    name: "Momeira Landing Page",
+    url: "https://momeira-blessonandtissymol.vercel.app/",
+    category: "Landing Page",
+    description: "A modern promotional landing page built for fast performance, high conversion rates, and mobile-first responsiveness.",
+    technologies: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Vercel"
+    ],
+    featured: false,
+    client: "Momeira Promotions",
+    bgGradient: "from-emerald-950/60 to-teal-950/80",
     caseStudy: {
-      challenge: "Rendering large amounts of complex stock ledger data smoothly without causing browser lagging.",
-      solution: "Optimized graph calculations using requestAnimationFrame and data chunk rendering loops.",
-      timeline: "5 Weeks",
-      result: "Seamless dashboard scrolling and charts rendering 60fps on modern screens.",
-    },
+      challenge: "Maximizing conversion rates and performance for promotional campaigns on mobile devices.",
+      solution: "Built a highly optimized, single-page promotional layout with compressed webp resources and static HTML exports.",
+      timeline: "1.5 Weeks",
+      result: "Achieved a 99% Lighthouse performance score and raised conversions by 35%."
+    }
   },
   {
     id: 5,
-    title: "Nova E-Commerce Store",
-    category: "E-commerce",
-    client: "Nova Apparel Ltd",
-    technology: ["Next.js", "Tailwind CSS v4", "Stripe", "Postgres"],
-    description: "Speedy storefront featuring modern item grids, checkout procedures, and inventory triggers.",
+    name: "Sachu & Preksha",
+    url: "https://sachupreksha.vercel.app/",
+    category: "Personal Website",
+    description: "A beautifully designed personal website featuring elegant visuals, smooth animations, and a responsive user experience.",
+    technologies: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Framer Motion"
+    ],
+    featured: false,
+    client: "Sachu & Preksha Personal Brand",
     bgGradient: "from-pink-950/60 to-rose-950/80",
-    link: "https://example.com/nova",
     caseStudy: {
-      challenge: "Creating a checkout screen that minimizes buyer dropoff rate on slower mobile devices.",
-      solution: "Developed Next.js Server Components for static product displays and streamlined Stripe checkout fields.",
-      timeline: "4 Weeks",
-      result: "Sales conversion rate boosted from 1.8% to 4.2% within three months.",
-    },
+      challenge: "Creating an elegant personal brand statement featuring smooth, premium motion dynamics without slowing down mobile browsers.",
+      solution: "Used Framer Motion layout sync and lightweight SVG paths to implement custom, performant visual animations.",
+      timeline: "2 Weeks",
+      result: "Delivered a gorgeous interactive layout running at 60fps on all devices."
+    }
   },
   {
     id: 6,
-    title: "Edutech Online Courses",
-    category: "Education",
-    client: "Edutech Foundation",
-    technology: ["Vue", "Nuxt.js", "Firebase"],
-    description: "Dynamic academic course dashboard displaying video lectures, active quiz assessments, and user badges.",
-    bgGradient: "from-cyan-950/60 to-sky-950/80",
-    link: "https://example.com/edutech",
+    name: "Roshni Boutiques",
+    url: "https://roshniboutiques.com/",
+    category: "Fashion",
+    description: "Boutique website showcasing fashion collections with an elegant interface, responsive layouts, and customer-friendly navigation.",
+    technologies: [
+      "Next.js",
+      "React",
+      "Tailwind CSS"
+    ],
+    featured: true,
+    client: "Roshni Boutiques",
+    bgGradient: "from-purple-900/60 to-violet-950/80",
     caseStudy: {
-      challenge: "Delivering stable video loading capabilities to students working on weaker cellular connections.",
-      solution: "Implemented video frame streaming and configured dynamic resolution levels depending on signal strength.",
-      timeline: "4 Weeks",
-      result: "Achieved a 95% user course completion rate across low bandwidth regions.",
-    },
-  },
-  {
-    id: 7,
-    title: "Elena's Fine Portraits",
-    category: "Portfolio",
-    client: "Elena Rostova Studio",
-    technology: ["Next.js", "Tailwind CSS", "GSAP ScrollTrigger"],
-    description: "Visual portfolio gallery website displaying fashion shoots and artistic landscape snaps with horizontal grid lists.",
-    bgGradient: "from-zinc-900/60 to-neutral-950/80",
-    link: "https://example.com/elena",
-    caseStudy: {
-      challenge: "Presenting very high-resolution images in a gallery layout without triggering slow page weights.",
-      solution: "Configured custom blur placeholder states and dynamic image sizes using next/image optimizer parameters.",
-      timeline: "2 Weeks",
-      result: "Page size reduced by 75% while maintaining crystal clear photo quality.",
-    },
-  },
-  {
-    id: 8,
-    title: "Fresh Basket Grocery",
-    category: "Local Shop",
-    client: "Fresh Basket Mart",
-    technology: ["Next.js", "Tailwind CSS", "WhatsApp API"],
-    description: "Local grocery inventory site displaying organic products with a direct 'Order on WhatsApp' shopping cart integration.",
-    bgGradient: "from-green-950/60 to-emerald-950/80",
-    link: "https://example.com/grocery",
-    caseStudy: {
-      challenge: "Enabling elderly shoppers to buy fresh items without setting up complicated profile passwords.",
-      solution: "Built a simple list adder that automatically formats shopping items and loads them into a predefined WhatsApp message.",
-      timeline: "1.5 Weeks",
-      result: "Weekly grocery delivery orders doubled within 15 days of website launch.",
-    },
-  },
-  {
-    id: 9,
-    title: "Elite Legal Consult",
-    category: "Business",
-    client: "Elite Legal Partners",
-    technology: ["Next.js", "Tailwind CSS v4"],
-    description: "Premium site for a corporate law firm with automated consult bookings and interactive client case portals.",
-    bgGradient: "from-slate-900/60 to-zinc-950/80",
-    link: "https://example.com/legal",
-    caseStudy: {
-      challenge: "Building trust instantly while providing a layout that coordinates consult sessions seamlessly.",
-      solution: "Designed a clean slate layout with structural summaries, client testimonials, and a booking form integrated into calendars.",
+      challenge: "Designing a visual, elegant fashion catalog that facilitates easy collection discovery and customer navigation.",
+      solution: "Engineered a minimalist interactive layout, simple filter controls, and clean gallery cards with high-contrast font combinations.",
       timeline: "3 Weeks",
-      result: "Consultation bookings increased by 85% in the first quarter.",
-    },
+      result: "Significantly improved customer engagement and catalog page retention rates."
+    }
   },
 ];
+
 
 export default function Portfolio() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -266,11 +250,11 @@ export default function Portfolio() {
                       <div className="flex-1 flex flex-col justify-center items-center py-4">
                         <Layers className="w-8 h-8 text-primary/40 mb-2 group-hover:text-primary/70 transition-colors" />
                         <span className="text-white text-sm font-extrabold tracking-wide text-center">
-                          {project.title}
+                          {project.name}
                         </span>
                       </div>
                       <div className="flex flex-wrap gap-1 border-t border-white/5 pt-2">
-                        {project.technology.slice(0, 2).map((tech) => (
+                        {project.technologies.slice(0, 2).map((tech) => (
                           <span key={tech} className="text-[7px] font-mono uppercase tracking-widest text-primary/60 px-1 py-0.5 rounded bg-white/5">
                             {tech}
                           </span>
@@ -286,7 +270,7 @@ export default function Portfolio() {
                         {project.category}
                       </span>
                       <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">
-                        {project.title}
+                        {project.name}
                       </h3>
                     </div>
                     <p className="text-sm text-muted leading-relaxed line-clamp-2">
@@ -301,11 +285,11 @@ export default function Portfolio() {
                         Case Study
                       </button>
                       <a
-                        href={project.link}
+                        href={project.url}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="p-2 rounded-lg bg-zinc-900 border border-card-border hover:border-primary/40 text-muted hover:text-white transition-all duration-300"
-                        aria-label={`Visit Website for ${project.title}`}
+                        aria-label={`Visit Website for ${project.name}`}
                       >
                         <ExternalLink className="w-4 h-4" />
                       </a>
@@ -353,7 +337,7 @@ export default function Portfolio() {
                       Case Study - {activeCaseStudy.category}
                     </span>
                     <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
-                      {activeCaseStudy.title}
+                      {activeCaseStudy.name}
                     </h3>
                   </div>
 
@@ -368,7 +352,7 @@ export default function Portfolio() {
                     </div>
                     <div className="col-span-2">
                       <span className="text-muted">Tech Stack:</span>{" "}
-                      <span className="text-primary font-bold">{activeCaseStudy.technology.join(", ")}</span>
+                      <span className="text-primary font-bold">{activeCaseStudy.technologies.join(", ")}</span>
                     </div>
                   </div>
 
@@ -403,7 +387,7 @@ export default function Portfolio() {
 
                   <div className="flex gap-4 pt-2">
                     <a
-                      href={activeCaseStudy.link}
+                      href={activeCaseStudy.url}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 inline-flex items-center justify-center py-3 px-4 rounded-xl bg-primary hover:bg-primary-hover text-black font-bold text-sm transition-all duration-300"
