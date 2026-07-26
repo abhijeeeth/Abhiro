@@ -33,7 +33,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "makePortfolio.in | Premium Web Development & Design Agency",
     description: "Custom, high-converting websites starting from ₹3,999.",
-    url: "https://makeportfolio.in",
   },
 };
 
