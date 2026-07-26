@@ -21,10 +21,10 @@ const schemaData = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://abhiro.com/#organization",
-      "name": "Abhiro Agency",
-      "url": "https://abhiro.com",
-      "logo": "https://abhiro.com/logo.png",
+      "@id": "https://makeportfolio.in/#organization",
+      "name": "makePortfolio.in Agency",
+      "url": "https://makeportfolio.in",
+      "logo": "https://makeportfolio.in/logo.png",
       "sameAs": [
         "https://github.com/abhijeeeth",
         "https://www.linkedin.com/in/stabhijith/",
@@ -33,9 +33,9 @@ const schemaData = {
     },
     {
       "@type": "LocalBusiness",
-      "@id": "https://abhiro.com/#localbusiness",
-      "name": "Abhiro Web Development Agency",
-      "url": "https://abhiro.com",
+      "@id": "https://makeportfolio.in/#localbusiness",
+      "name": "makePortfolio.in Web Development Agency",
+      "url": "https://makeportfolio.in",
       "telephone": "+916238545696",
       "priceRange": "INR",
       "address": {
@@ -49,10 +49,10 @@ const schemaData = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://abhiro.com/#website",
-      "url": "https://abhiro.com",
-      "name": "Abhiro | Premium Web Development & Design Agency",
-      "publisher": { "@id": "https://abhiro.com/#organization" }
+      "@id": "https://makeportfolio.in/#website",
+      "url": "https://makeportfolio.in",
+      "name": "makePortfolio.in | Premium Web Development & Design Agency",
+      "publisher": { "@id": "https://makeportfolio.in/#organization" }
     }
   ]
 };

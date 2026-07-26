@@ -11,7 +11,7 @@ const testimonials = [
   {
     name: "Vikram Mehta",
     company: "Apex local bakery",
-    text: "Abhiro built our landing page in just 4 days. The ₹3,999 pricing felt too good to be true, but the speed, design, and SEO setup exceeded all expectations. Highly recommend their template customization plan!",
+    text: "makePortfolio.in built our landing page in just 4 days. The ₹3,999 pricing felt too good to be true, but the speed, design, and SEO setup exceeded all expectations. Highly recommend their template customization plan!",
     rating: 5,
     avatarGrad: "from-blue-500 to-indigo-500",
   },
@@ -25,7 +25,7 @@ const testimonials = [
   {
     name: "Rahul Verma",
     company: "Freelance Designer",
-    text: "As a designer, I am very picky about typography and micro-interactions. The team at Abhiro translated my designs into responsive code with clean animations. Absolutely flawless craftsmanship.",
+    text: "As a designer, I am very picky about typography and micro-interactions. The team at makePortfolio.in translated my designs into responsive code with clean animations. Absolutely flawless craftsmanship.",
     rating: 5,
     avatarGrad: "from-pink-500 to-rose-500",
   },

@@ -92,7 +92,7 @@ export default function Hero() {
                 <div className="w-3 h-3 rounded-full bg-green-500/80" />
               </div>
               <div className="w-40 h-4 bg-zinc-800/80 rounded-md text-[9px] text-center text-zinc-500 flex items-center justify-center font-mono select-none">
-                abhiro.com/portfolio
+                makePortfolio.in/portfolio
               </div>
               <div className="w-3" />
             </div>
@@ -101,7 +101,7 @@ export default function Hero() {
             <div className="relative w-full h-[calc(100%-2rem)]">
               <Image
                 src="/images/hero_mockup.png"
-                alt="Abhiro Website Agency Mockup"
+                alt="makePortfolio.in Website Agency Mockup"
                 fill
                 priority
                 className="object-cover transition-transform duration-700 group-hover:scale-105"

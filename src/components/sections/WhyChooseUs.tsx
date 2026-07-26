@@ -84,7 +84,7 @@ export default function WhyChooseUs() {
             transition={{ duration: 0.6 }}
             className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-gradient"
           >
-            Why Brands Choose Abhiro
+            Why Brands Choose makePortfolio.in
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

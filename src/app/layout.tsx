@@ -14,23 +14,23 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Abhiro | Premium Web Development & Design Agency",
+  title: "makePortfolio.in | Premium Web Development & Design Agency",
   description: "We believe everyone deserves a website. Professional, custom, high-converting websites starting from ₹3,999. Portfolio websites, e-commerce, and business sites.",
-  metadataBase: new URL("https://abhiro.com"),
+  metadataBase: new URL("https://makeportfolio.in"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Abhiro | Premium Web Development & Design Agency",
+    title: "makePortfolio.in | Premium Web Development & Design Agency",
     description: "We believe everyone deserves a website. Custom, high-converting sites starting from ₹3,999.",
-    url: "https://abhiro.com",
-    siteName: "Abhiro Agency",
+    url: "https://makeportfolio.in",
+    siteName: "makePortfolio.in Agency",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Abhiro | Premium Web Development & Design Agency",
+    title: "makePortfolio.in | Premium Web Development & Design Agency",
     description: "Custom, high-converting websites starting from ₹3,999.",
   },
 };

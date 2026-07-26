@@ -43,10 +43,10 @@ export default function Navbar() {
         {/* Logo */}
         <a href="#" className="flex items-center space-x-2 group">
           <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center font-bold text-black transition-transform duration-300 group-hover:rotate-6">
-            A
+            m
           </div>
           <span className="text-xl font-bold tracking-tight text-white group-hover:text-primary transition-colors">
-            Abhiro
+            makePortfolio.in
           </span>
         </a>
 

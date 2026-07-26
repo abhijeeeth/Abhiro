@@ -49,7 +49,7 @@ export default function Consultation() {
 
   const handleWhatsAppBooking = () => {
     const phoneNumber = "916238545696";
-    const message = encodeURIComponent("Hi Abhiro! I'd like to book a free web consultation. I want to discuss my website options.");
+    const message = encodeURIComponent("Hi makePortfolio.in! I'd like to book a free web consultation. I want to discuss my website options.");
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
   };
 
@@ -110,7 +110,7 @@ export default function Consultation() {
             {/* Google Map Grayscale Frame */}
             <div className="w-full aspect-[16/9] rounded-2xl overflow-hidden border border-card-border grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
               <iframe
-                title="Abhiro Office Map Location"
+                title="makePortfolio.in Office Map Location"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.9782500000003!2d77.59456270000001!3d12.9715987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c0000001%3A0x7e0a0a0a0a0a0a0a!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
