@@ -296,7 +296,7 @@ export default function Consultation() {
                     <div className="space-y-2">
                       <h3 className="text-2xl font-extrabold text-white">Consultation Booked!</h3>
                       <p className="text-sm text-muted max-w-sm leading-relaxed mx-auto">
-                        Thank you for reaching out. We have received your project details and our team will get in touch via email or phone within the next 24 hours.
+                        Thank you for reaching out. We have received your project details. Abhijith Shaji or one of our design collaborators will review them and get back to you via email or WhatsApp within the next 24 hours to align on our call.
                       </p>
                     </div>
                     <button

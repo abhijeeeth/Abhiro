@@ -3,68 +3,32 @@
 import { motion } from "framer-motion";
 import {
   DollarSign,
-  Palette,
   Search,
   Zap,
-  Smartphone,
-  Wrench,
-  ShieldCheck,
   Headphones,
-  Cpu,
-  Target,
 } from "lucide-react";
 import GlowCard from "../ui/GlowCard";
 
-const reasons = [
+const pillars = [
   {
     icon: DollarSign,
-    title: "Affordable Pricing",
-    desc: "Unbeatable rates for both premium custom designs and budget templates, making high-end websites affordable for everyone.",
-  },
-  {
-    icon: Palette,
-    title: "Premium Designs",
-    desc: "Unique interfaces that stand out. We focus on modern typography, balanced grid layouts, and high-converting copy.",
-  },
-  {
-    icon: Search,
-    title: "SEO Optimized",
-    desc: "Every build has semantic HTML, structured JSON-LD schemas, optimized keywords, and meta structures ready for google index.",
+    title: "Affordable & Transparent",
+    desc: "No hidden charges or bloated agency fees. We provide direct pricing and leverage free static hosting platforms (like Vercel/Netlify) to keep your operational costs near zero.",
   },
   {
     icon: Zap,
-    title: "Lightning Fast",
-    desc: "Optimized script footprints, code splitting, and compressed media configurations to deliver near-instant loading (<2 seconds).",
+    title: "High-Performance Code",
+    desc: "We build using Next.js and optimized React architectures. Our websites achieve 95+ Lighthouse speed scores, keeping your visitors engaged and preventing bounce drop-offs.",
   },
   {
-    icon: Smartphone,
-    title: "100% Responsive",
-    desc: "Pixel-perfect rendering across mobile, tablets, and wide screens. We test multiple viewport breaks before every launch.",
-  },
-  {
-    icon: Wrench,
-    title: "Easy Maintenance",
-    desc: "Clean component-based structures that enable smooth code expansions and effortless media changes whenever needed.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Secure & Reliable",
-    desc: "Implementation of SSL certificates, standard security headers, contact form sanitization, and spam protection APIs.",
+    icon: Search,
+    title: "SEO & Indexing Ready",
+    desc: "We configure semantic HTML5, structured JSON-LD schemas, sitemaps, and optimized search meta tags out of the box, preparing your site for Google indexation.",
   },
   {
     icon: Headphones,
-    title: "Reliable Support",
-    desc: "Dedicated post-launch developer support, training videos, and documentation so you're never left in the dark.",
-  },
-  {
-    icon: Cpu,
-    title: "Modern Tech Stack",
-    desc: "Crafted using Next.js 15, React, Tailwind CSS v4, and animations that load quickly and keep your tech future-proof.",
-  },
-  {
-    icon: Target,
-    title: "Conversion Focused",
-    desc: "Strategic placement of CTA buttons, lead generation forms, and layouts tuned specifically to convert site traffic into clients.",
+    title: "True Partnership",
+    desc: "You deal directly with the developers, not account managers. We provide custom walk-through training videos, handoff documentation, and active post-launch support.",
   },
 ];
 
@@ -75,57 +39,75 @@ export default function WhyChooseUs() {
       <div className="absolute top-1/2 left-0 w-80 h-80 bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6">
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-gradient"
-          >
-            Why Brands Choose makePortfolio.in
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-muted text-base sm:text-lg"
-          >
-            We combine high-performance code craftsmanship with visual elegance to ensure your website is not just a digital business card, but a conversion engine.
-          </motion.p>
-        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          {/* Left Column: Our Story & Mission */}
+          <div className="lg:col-span-6 space-y-8 text-left">
+            <div className="space-y-4">
+              <span className="text-xs uppercase font-extrabold tracking-widest text-primary font-mono bg-primary/10 px-3 py-1 rounded-full border border-primary/20">
+                Our Story &amp; Mission
+              </span>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-gradient leading-tight">
+                About makePortfolio.in
+              </h2>
+            </div>
+            
+            <div className="space-y-5 text-sm sm:text-base text-muted leading-relaxed">
+              <p>
+                makePortfolio.in was founded on a simple, core belief: <strong className="text-white">"We believe everyone deserves a website."</strong>
+              </p>
+              <p>
+                We noticed that small business owners, freelancers, and creators in India were facing two extremes: they were either quoted exorbitant pricing by traditional corporate agencies, or left struggling with slow, generic site templates. We created makePortfolio.in to provide a transparent, professional middle ground.
+              </p>
+              <p>
+                Led by developer Abhijith Shaji, we operate as a lean digital collective. By collaborating with a trusted freelance network of designers and copywriters, we eliminate agency overhead and channel 100% of our focus into writing clean, high-performance code and designing modern interfaces.
+              </p>
+            </div>
 
-        {/* Reasons Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-          {reasons.map((item, idx) => {
-            const Icon = item.icon;
-            return (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.05 }}
-                className="h-full"
-              >
-                <GlowCard className="h-full border border-card-border/80 hover:border-primary/25 bg-zinc-950/20 backdrop-blur-sm p-5 flex flex-col justify-between items-start group min-h-[220px]">
-                  <div className="space-y-4">
-                    <div className="w-10 h-10 rounded-lg bg-zinc-900 border border-card-border flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-all duration-300">
-                      <Icon className="w-5 h-5" />
-                    </div>
-                    <h3 className="text-base font-extrabold text-white group-hover:text-primary transition-colors">
-                      {item.title}
-                    </h3>
-                    <p className="text-xs text-muted leading-relaxed">
-                      {item.desc}
-                    </p>
-                  </div>
-                </GlowCard>
-              </motion.div>
-            );
-          })}
+            {/* Mission Quote Block */}
+            <div className="border-l-2 border-primary pl-4 py-2 bg-zinc-950/40 rounded-r-xl pr-4">
+              <p className="text-sm font-semibold italic text-white/95">
+                "Our mission is to empower independent creators and local businesses with web pages that load instantly, rank naturally on search engines, and represent their brand authentically."
+              </p>
+            </div>
+          </div>
+
+          {/* Right Column: Core Commitments */}
+          <div className="lg:col-span-6 space-y-6">
+            <h3 className="text-lg font-bold text-white tracking-wider uppercase text-left pl-2 font-mono text-primary/80">
+              Our Core Commitments
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {pillars.map((item, idx) => {
+                const Icon = item.icon;
+                return (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 25 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: idx * 0.05 }}
+                    className="h-full"
+                  >
+                    <GlowCard className="h-full border border-card-border/80 hover:border-primary/25 bg-zinc-950/20 backdrop-blur-sm p-6 flex flex-col justify-between items-start group min-h-[220px]">
+                      <div className="space-y-4 text-left">
+                        <div className="w-10 h-10 rounded-lg bg-zinc-900 border border-card-border flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-all duration-300">
+                          <Icon className="w-5 h-5" />
+                        </div>
+                        <h4 className="text-base font-extrabold text-white group-hover:text-primary transition-colors">
+                          {item.title}
+                        </h4>
+                        <p className="text-xs text-muted leading-relaxed">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </GlowCard>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

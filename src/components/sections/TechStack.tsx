@@ -7,32 +7,32 @@ const categories = [
   {
     id: "frontend",
     title: "Frontend",
-    skills: ["React", "Next.js", "Vue", "Nuxt.js", "Tailwind CSS", "HTML5", "CSS3", "JavaScript", "TypeScript"],
+    skills: ["React", "Next.js", "Tailwind CSS", "HTML5", "CSS3", "JavaScript", "TypeScript", "Framer Motion"],
   },
   {
     id: "backend",
-    title: "Backend",
-    skills: ["Node.js", "Express.js", "Laravel", "PHP", "Python", "REST APIs", "GraphQL"],
+    title: "Backend & APIs",
+    skills: ["Node.js", "Express.js", "REST APIs", "GraphQL"],
   },
   {
     id: "database",
-    title: "Database",
-    skills: ["MySQL", "PostgreSQL", "MongoDB", "Firebase Firestore", "Redis", "Prisma ORM"],
+    title: "Database & ORM",
+    skills: ["PostgreSQL", "MongoDB", "Firebase Firestore", "Prisma ORM"],
   },
   {
     id: "deployment",
-    title: "Deployment & Infra",
-    skills: ["Vercel", "Netlify", "Cloudflare Pages", "GitHub Pages", "Docker", "AWS S3"],
+    title: "Hosting & CDN",
+    skills: ["Vercel", "Netlify", "Cloudflare Pages", "GitHub Pages"],
   },
   {
     id: "design",
-    title: "Design",
-    skills: ["Figma", "Adobe Photoshop", "Adobe Illustrator", "SVG Animations"],
+    title: "Design & UX",
+    skills: ["Figma", "Design Systems", "SVG Animations", "UX Wireframing"],
   },
   {
     id: "tools",
-    title: "Tools & DevOps",
-    skills: ["Git & GitHub", "VS Code", "Postman API", "ESLint", "Prettier", "npm / yarn / pnpm"],
+    title: "Dev Tools",
+    skills: ["Git & GitHub", "VS Code", "Postman API", "npm / pnpm"],
   },
 ];
 

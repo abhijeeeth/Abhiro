@@ -17,50 +17,58 @@ const services = [
   {
     icon: User,
     title: "Portfolio Websites",
-    description:
-      "Stunning personal portfolios for freelancers, students, personal brands, creators, and models. Stand out and secure your next big gig.",
+    forWho: "Freelancers, creators, job seekers, and students looking for a professional digital resume.",
+    whyMatters: "A custom interactive site showcases your work and builds instant credibility online.",
+    deliverables: ["Custom work showcase", "Downloadable resume integration", "Fast contact setups", "Self-hosted setup guide"],
   },
   {
     icon: Building2,
     title: "Business Websites",
-    description:
-      "Professional website solutions for corporate offices, law firms, dental clinics, local service businesses, and consultancies.",
+    forWho: "Local shops, clinics, consultancies, and service providers building authority.",
+    whyMatters: "A professional site establishes client trust and serves as a 24/7 informational hub.",
+    deliverables: ["Core pages (About/Services)", "Brand identity alignment", "Google Maps setup", "Lead capture forms"],
   },
   {
     icon: FileCode2,
     title: "Landing Pages",
-    description:
-      "High-converting single-page landing campaigns designed specifically for startups, SaaS launches, product promos, and lead capture.",
+    forWho: "Startups, SaaS launches, and marketing managers running focused campaigns.",
+    whyMatters: "A single-action focus cuts distractions and directly boosts user sign-ups or downloads.",
+    deliverables: ["Single-page layout", "Optimized CTAs & headlines", "Analytics integration", "Form integrations"],
   },
   {
     icon: ShoppingBag,
-    title: "E-Commerce",
-    description:
-      "Robust online store builds featuring easy product catalog management, secure shopping cart workflows, and Stripe/Razorpay integrations.",
+    title: "E-Commerce Shops",
+    forWho: "Boutique owners, local brands, and creators selling items directly online.",
+    whyMatters: "Allows you to expand your customer base nationwide with automated checkout flows.",
+    deliverables: ["Product catalogs", "Shopping cart database", "Secure payment gateway", "WhatsApp order link"],
   },
   {
     icon: RefreshCw,
     title: "Website Redesign",
-    description:
-      "Transform your outdated or slow web layout into a high-performance modern experience using current UI standards and optimized frameworks.",
+    forWho: "Businesses with slow, outdated, or mobile-unfriendly legacy websites.",
+    whyMatters: "Modern layouts retain visitor attention, load faster, and improve search rankings.",
+    deliverables: ["Fresh UI/UX redesign", "Existing content migration", "Page speed optimization", "Canonical URL redirects"],
   },
   {
     icon: Search,
     title: "SEO Optimization",
-    description:
-      "Complete keyword auditing, search engine sitemap submission, structured schema layout, and metadata adjustments to rank higher.",
+    forWho: "Brands struggling with low search visibility who want organic business traffic.",
+    whyMatters: "Ranks your services for search intents, driving free web traffic with no ad spend.",
+    deliverables: ["Technical indexing audits", "Keyword meta tag mappings", "XML sitemaps creation", "Schema structured markup"],
   },
   {
     icon: Settings,
     title: "Website Maintenance",
-    description:
-      "Regular background data backups, server health monitoring, immediate security audits, package upgrades, and general content updates.",
+    forWho: "Busy business owners needing website upkeep without technical overhead.",
+    whyMatters: "Regular checks prevent security threats, broken layouts, and database slowdowns.",
+    deliverables: ["Code version upgrades", "Automated backups", "Form testing audits", "Monthly content changes"],
   },
   {
     icon: Zap,
-    title: "Performance Optimization",
-    description:
-      "Compressing bloated graphics, removing layout shift, fixing caching problems, and boosting overall Lighthouse metrics to 95+ score.",
+    title: "Performance Tuneup",
+    forWho: "Websites suffering from slow load speeds and high user bounce drop-offs.",
+    whyMatters: "Fast loading directly improves visitor retention and elevates search placement.",
+    deliverables: ["Asset compression details", "Javascript code splitting", "Layout shift (CLS) fixes", "Lighthouse 95+ score target"],
   },
 ];
 
@@ -105,19 +113,37 @@ export default function Services() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.05 }}
               >
-                <GlowCard className="h-full flex flex-col items-start justify-between min-h-[250px] border border-card-border/80 hover:border-primary/30 group">
-                  <div className="space-y-4">
+                <GlowCard className="h-full flex flex-col justify-between border border-card-border/80 hover:border-primary/30 group p-6 min-h-[360px]">
+                  <div className="space-y-4 w-full">
                     {/* Icon wrapper */}
                     <div className="w-12 h-12 rounded-xl bg-zinc-900 border border-card-border flex items-center justify-center text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-black transition-all duration-300">
                       <Icon className="w-6 h-6" />
                     </div>
                     {/* Content */}
-                    <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">
+                    <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-primary transition-colors">
                       {service.title}
                     </h3>
-                    <p className="text-sm text-muted leading-relaxed">
-                      {service.description}
-                    </p>
+                    <div className="space-y-3 pt-1 text-xs text-left">
+                      <div>
+                        <span className="text-primary font-bold uppercase tracking-wider text-[9px] block mb-0.5">Who It's For</span>
+                        <p className="text-muted leading-relaxed text-[11px]">{service.forWho}</p>
+                      </div>
+                      <div>
+                        <span className="text-primary font-bold uppercase tracking-wider text-[9px] block mb-0.5">Why It Matters</span>
+                        <p className="text-muted leading-relaxed text-[11px]">{service.whyMatters}</p>
+                      </div>
+                      <div>
+                        <span className="text-primary font-bold uppercase tracking-wider text-[9px] block mb-1">Expected Deliverables</span>
+                        <ul className="grid grid-cols-1 gap-1 text-[11px] text-white/90">
+                          {service.deliverables.map((item, index) => (
+                            <li key={index} className="flex items-center space-x-1.5">
+                              <span className="w-1 h-1 rounded-full bg-primary shrink-0" />
+                              <span className="truncate">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </GlowCard>
               </motion.div>

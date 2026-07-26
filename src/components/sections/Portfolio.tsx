@@ -74,7 +74,7 @@ const projects: Project[] = [
       challenge: "Presenting detailed information on admissions, faculties, and learning resources without overwhelming new applicants.",
       solution: "Designed a clean, tabbed layout structure and an interactive admissions helper component to guide users step-by-step.",
       timeline: "4 Weeks",
-      result: "Increased admissions inquiries and online registration rates by 80%."
+      result: "Successfully established a professional web presence with streamlined digital enrollment forms, significantly reducing administrative intake workloads."
     }
   },
   {
@@ -95,7 +95,7 @@ const projects: Project[] = [
       challenge: "Strengthening the corporate brand identity with clean layouts while maintaining a high volume of lead generations.",
       solution: "Developed custom corporate landing sections, interactive service pages, and highly conversion-optimized lead capture forms.",
       timeline: "3 Weeks",
-      result: "Generated a 50% increase in corporate inquiries during the first two months."
+      result: "Created a modern corporate identity that cleanly communicates services and has simplified the customer inquiry flow."
     }
   },
   {
@@ -117,7 +117,7 @@ const projects: Project[] = [
       challenge: "Maximizing conversion rates and performance for promotional campaigns on mobile devices.",
       solution: "Built a highly optimized, single-page promotional layout with compressed webp resources and static HTML exports.",
       timeline: "1.5 Weeks",
-      result: "Achieved a 99% Lighthouse performance score and raised conversions by 35%."
+      result: "Delivered a lightning-fast promotional page with a 99% performance score, providing a friction-free intake channel for advertising campaigns."
     }
   },
   {
