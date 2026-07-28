@@ -2,26 +2,10 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, X, BookOpen, Layers } from "lucide-react";
+import { ExternalLink, BookOpen, Layers } from "lucide-react";
+import Link from "next/link";
 import GlowCard from "../ui/GlowCard";
-
-interface Project {
-  id: number;
-  name: string;
-  url: string;
-  category: string;
-  description: string;
-  technologies: string[];
-  featured: boolean;
-  client: string;
-  bgGradient: string;
-  caseStudy: {
-    challenge: string;
-    solution: string;
-    timeline: string;
-    result: string;
-  };
-}
+import { portfolioData } from "@/data/portfolioData";
 
 const categories = [
   "All",
@@ -33,146 +17,12 @@ const categories = [
   "Fashion",
 ];
 
-const projects: Project[] = [
-  {
-    id: 1,
-    name: "FarmSpice",
-    url: "https://farmspice.vercel.app/",
-    category: "E-Commerce",
-    description: "A modern e-commerce platform for premium Kerala spices featuring responsive design, product catalog, and a seamless shopping experience.",
-    technologies: [
-      "Next.js",
-      "React",
-      "Tailwind CSS",
-      "Vercel"
-    ],
-    featured: true,
-    client: "FarmSpice Premium Spices",
-    bgGradient: "from-amber-950/60 to-orange-950/80",
-    caseStudy: {
-      challenge: "Building an immersive shopping experience that conveys the quality of premium spices while maintaining lightning-fast load times on cellular connections.",
-      solution: "Implemented Next.js Server Components for static product listings, optimized image sizes, and streamlined the customer shopping path.",
-      timeline: "3 Weeks",
-      result: "Successfully launched the store with 100% responsive design and direct, fast shopping checkouts."
-    }
-  },
-  {
-    id: 2,
-    name: "Morris English Academy",
-    url: "https://www.morrisenglishacademy.com/",
-    category: "Education",
-    description: "Professional website for an English language academy showcasing courses, admissions, faculty, and student-focused learning resources.",
-    technologies: [
-      "Next.js",
-      "React",
-      "Tailwind CSS"
-    ],
-    featured: true,
-    client: "Morris English Academy",
-    bgGradient: "from-blue-950/60 to-indigo-950/80",
-    caseStudy: {
-      challenge: "Presenting detailed information on admissions, faculties, and learning resources without overwhelming new applicants.",
-      solution: "Designed a clean, tabbed layout structure and an interactive admissions helper component to guide users step-by-step.",
-      timeline: "4 Weeks",
-      result: "Successfully established a professional web presence with streamlined digital enrollment forms, significantly reducing administrative intake workloads."
-    }
-  },
-  {
-    id: 3,
-    name: "Momeira",
-    url: "https://www.momeira.com/",
-    category: "Business",
-    description: "Corporate website designed to strengthen brand identity with a clean interface, responsive layouts, and lead generation features.",
-    technologies: [
-      "Next.js",
-      "React",
-      "Tailwind CSS"
-    ],
-    featured: true,
-    client: "Momeira Group",
-    bgGradient: "from-slate-900/60 to-zinc-950/80",
-    caseStudy: {
-      challenge: "Strengthening the corporate brand identity with clean layouts while maintaining a high volume of lead generations.",
-      solution: "Developed custom corporate landing sections, interactive service pages, and highly conversion-optimized lead capture forms.",
-      timeline: "3 Weeks",
-      result: "Created a modern corporate identity that cleanly communicates services and has simplified the customer inquiry flow."
-    }
-  },
-  {
-    id: 4,
-    name: "Momeira Landing Page",
-    url: "https://momeira-blessonandtissymol.vercel.app/",
-    category: "Landing Page",
-    description: "A modern promotional landing page built for fast performance, high conversion rates, and mobile-first responsiveness.",
-    technologies: [
-      "Next.js",
-      "React",
-      "Tailwind CSS",
-      "Vercel"
-    ],
-    featured: false,
-    client: "Momeira Promotions",
-    bgGradient: "from-emerald-950/60 to-teal-950/80",
-    caseStudy: {
-      challenge: "Maximizing conversion rates and performance for promotional campaigns on mobile devices.",
-      solution: "Built a highly optimized, single-page promotional layout with compressed webp resources and static HTML exports.",
-      timeline: "1.5 Weeks",
-      result: "Delivered a lightning-fast promotional page with a 99% performance score, providing a friction-free intake channel for advertising campaigns."
-    }
-  },
-  {
-    id: 5,
-    name: "Sachu & Preksha",
-    url: "https://sachupreksha.vercel.app/",
-    category: "Personal Website",
-    description: "A beautifully designed personal website featuring elegant visuals, smooth animations, and a responsive user experience.",
-    technologies: [
-      "Next.js",
-      "React",
-      "Tailwind CSS",
-      "Framer Motion"
-    ],
-    featured: false,
-    client: "Sachu & Preksha Personal Brand",
-    bgGradient: "from-pink-950/60 to-rose-950/80",
-    caseStudy: {
-      challenge: "Creating an elegant personal brand statement featuring smooth, premium motion dynamics without slowing down mobile browsers.",
-      solution: "Used Framer Motion layout sync and lightweight SVG paths to implement custom, performant visual animations.",
-      timeline: "2 Weeks",
-      result: "Delivered a gorgeous interactive layout running at 60fps on all devices."
-    }
-  },
-  {
-    id: 6,
-    name: "Roshni Boutiques",
-    url: "https://roshniboutiques.com/",
-    category: "Fashion",
-    description: "Boutique website showcasing fashion collections with an elegant interface, responsive layouts, and customer-friendly navigation.",
-    technologies: [
-      "Next.js",
-      "React",
-      "Tailwind CSS"
-    ],
-    featured: true,
-    client: "Roshni Boutiques",
-    bgGradient: "from-purple-900/60 to-violet-950/80",
-    caseStudy: {
-      challenge: "Designing a visual, elegant fashion catalog that facilitates easy collection discovery and customer navigation.",
-      solution: "Engineered a minimalist interactive layout, simple filter controls, and clean gallery cards with high-contrast font combinations.",
-      timeline: "3 Weeks",
-      result: "Significantly improved customer engagement and catalog page retention rates."
-    }
-  },
-];
-
-
 export default function Portfolio() {
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [activeCaseStudy, setActiveCaseStudy] = useState<Project | null>(null);
 
   const filteredProjects = selectedCategory === "All"
-    ? projects
-    : projects.filter(p => p.category === selectedCategory);
+    ? portfolioData
+    : portfolioData.filter(p => p.category === selectedCategory);
 
   return (
     <section id="portfolio" className="py-24 relative overflow-hidden bg-black/40 border-t border-card-border">
@@ -277,13 +127,13 @@ export default function Portfolio() {
                       {project.description}
                     </p>
                     <div className="flex items-center gap-3 pt-2">
-                      <button
-                        onClick={() => setActiveCaseStudy(project)}
+                      <Link
+                        href={`/portfolio/${project.slug}`}
                         className="flex-1 inline-flex items-center justify-center py-2 px-3 rounded-lg bg-zinc-900 border border-card-border hover:border-primary/40 text-xs font-semibold text-white transition-all duration-300"
                       >
                         <BookOpen className="w-3.5 h-3.5 mr-1.5 text-primary" />
                         Case Study
-                      </button>
+                      </Link>
                       <a
                         href={project.url}
                         target="_blank"
@@ -300,107 +150,6 @@ export default function Portfolio() {
             ))}
           </AnimatePresence>
         </div>
-
-        {/* Case Study Dialog Modal */}
-        <AnimatePresence>
-          {activeCaseStudy && (
-            <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-              {/* Overlay Backdrop */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                onClick={() => setActiveCaseStudy(null)}
-                className="absolute inset-0 bg-black/85 backdrop-blur-sm"
-              />
-
-              {/* Dialog Content */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                className="relative w-full max-w-2xl rounded-2xl bg-zinc-950 border border-card-border/80 shadow-2xl p-6 sm:p-8 z-10 overflow-hidden"
-              >
-                {/* Close Button */}
-                <button
-                  onClick={() => setActiveCaseStudy(null)}
-                  className="absolute top-4 right-4 p-2 text-muted hover:text-white rounded-lg bg-zinc-900 border border-card-border transition-colors"
-                  aria-label="Close dialog"
-                >
-                  <X className="w-4 h-4" />
-                </button>
-
-                {/* Case Study Details */}
-                <div className="space-y-6">
-                  <div className="space-y-1">
-                    <span className="text-xs uppercase tracking-widest font-extrabold text-primary">
-                      Case Study - {activeCaseStudy.category}
-                    </span>
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
-                      {activeCaseStudy.name}
-                    </h3>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-4 border-t border-b border-card-border/50 py-4 text-xs font-mono">
-                    <div>
-                      <span className="text-muted">Client:</span>{" "}
-                      <span className="text-white font-bold">{activeCaseStudy.client}</span>
-                    </div>
-                    <div>
-                      <span className="text-muted">Timeline:</span>{" "}
-                      <span className="text-white font-bold">{activeCaseStudy.caseStudy.timeline}</span>
-                    </div>
-                    <div className="col-span-2">
-                      <span className="text-muted">Tech Stack:</span>{" "}
-                      <span className="text-primary font-bold">{activeCaseStudy.technologies.join(", ")}</span>
-                    </div>
-                  </div>
-
-                  <div className="space-y-4 max-h-[250px] overflow-y-auto pr-2 scrollbar-thin">
-                    <div className="space-y-1">
-                      <h4 className="text-xs uppercase font-extrabold text-white tracking-widest">
-                        The Challenge
-                      </h4>
-                      <p className="text-sm text-muted leading-relaxed">
-                        {activeCaseStudy.caseStudy.challenge}
-                      </p>
-                    </div>
-
-                    <div className="space-y-1">
-                      <h4 className="text-xs uppercase font-extrabold text-white tracking-widest">
-                        Our Solution
-                      </h4>
-                      <p className="text-sm text-muted leading-relaxed">
-                        {activeCaseStudy.caseStudy.solution}
-                      </p>
-                    </div>
-
-                    <div className="space-y-1">
-                      <h4 className="text-xs uppercase font-extrabold text-primary tracking-widest">
-                        The Result
-                      </h4>
-                      <p className="text-sm text-white/95 leading-relaxed font-medium">
-                        {activeCaseStudy.caseStudy.result}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-4 pt-2">
-                    <a
-                      href={activeCaseStudy.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 inline-flex items-center justify-center py-3 px-4 rounded-xl bg-primary hover:bg-primary-hover text-black font-bold text-sm transition-all duration-300"
-                    >
-                      Visit Active Website
-                      <ExternalLink className="w-4 h-4 ml-1.5" />
-                    </a>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          )}
-        </AnimatePresence>
       </div>
     </section>
   );

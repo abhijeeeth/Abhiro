@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import {
   User,
   Building2,
@@ -10,67 +11,22 @@ import {
   Search,
   Settings,
   Zap,
+  ChevronRight,
+  LucideIcon,
 } from "lucide-react";
 import GlowCard from "../ui/GlowCard";
+import { servicesData } from "@/data/servicesData";
 
-const services = [
-  {
-    icon: User,
-    title: "Portfolio Websites",
-    forWho: "Freelancers, creators, job seekers, and students looking for a professional digital resume.",
-    whyMatters: "A custom interactive site showcases your work and builds instant credibility online.",
-    deliverables: ["Custom work showcase", "Downloadable resume integration", "Fast contact setups", "Self-hosted setup guide"],
-  },
-  {
-    icon: Building2,
-    title: "Business Websites",
-    forWho: "Local shops, clinics, consultancies, and service providers building authority.",
-    whyMatters: "A professional site establishes client trust and serves as a 24/7 informational hub.",
-    deliverables: ["Core pages (About/Services)", "Brand identity alignment", "Google Maps setup", "Lead capture forms"],
-  },
-  {
-    icon: FileCode2,
-    title: "Landing Pages",
-    forWho: "Startups, SaaS launches, and marketing managers running focused campaigns.",
-    whyMatters: "A single-action focus cuts distractions and directly boosts user sign-ups or downloads.",
-    deliverables: ["Single-page layout", "Optimized CTAs & headlines", "Analytics integration", "Form integrations"],
-  },
-  {
-    icon: ShoppingBag,
-    title: "E-Commerce Shops",
-    forWho: "Boutique owners, local brands, and creators selling items directly online.",
-    whyMatters: "Allows you to expand your customer base nationwide with automated checkout flows.",
-    deliverables: ["Product catalogs", "Shopping cart database", "Secure payment gateway", "WhatsApp order link"],
-  },
-  {
-    icon: RefreshCw,
-    title: "Website Redesign",
-    forWho: "Businesses with slow, outdated, or mobile-unfriendly legacy websites.",
-    whyMatters: "Modern layouts retain visitor attention, load faster, and improve search rankings.",
-    deliverables: ["Fresh UI/UX redesign", "Existing content migration", "Page speed optimization", "Canonical URL redirects"],
-  },
-  {
-    icon: Search,
-    title: "SEO Optimization",
-    forWho: "Brands struggling with low search visibility who want organic business traffic.",
-    whyMatters: "Ranks your services for search intents, driving free web traffic with no ad spend.",
-    deliverables: ["Technical indexing audits", "Keyword meta tag mappings", "XML sitemaps creation", "Schema structured markup"],
-  },
-  {
-    icon: Settings,
-    title: "Website Maintenance",
-    forWho: "Busy business owners needing website upkeep without technical overhead.",
-    whyMatters: "Regular checks prevent security threats, broken layouts, and database slowdowns.",
-    deliverables: ["Code version upgrades", "Automated backups", "Form testing audits", "Monthly content changes"],
-  },
-  {
-    icon: Zap,
-    title: "Performance Tuneup",
-    forWho: "Websites suffering from slow load speeds and high user bounce drop-offs.",
-    whyMatters: "Fast loading directly improves visitor retention and elevates search placement.",
-    deliverables: ["Asset compression details", "Javascript code splitting", "Layout shift (CLS) fixes", "Lighthouse 95+ score target"],
-  },
-];
+const iconMap: Record<string, LucideIcon> = {
+  "portfolio-websites": User,
+  "business-websites": Building2,
+  "landing-pages": FileCode2,
+  "ecommerce-websites": ShoppingBag,
+  "website-redesign": RefreshCw,
+  "seo-services": Search,
+  "maintenance": Settings,
+  "performance-tuneup": Zap,
+};
 
 export default function Services() {
   return (
@@ -103,17 +59,17 @@ export default function Services() {
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service, idx) => {
-            const Icon = service.icon;
+          {servicesData.map((service, idx) => {
+            const Icon = iconMap[service.slug] || User;
             return (
               <motion.div
-                key={idx}
+                key={service.slug}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.05 }}
               >
-                <GlowCard className="h-full flex flex-col justify-between border border-card-border/80 hover:border-primary/30 group p-6 min-h-[360px]">
+                <GlowCard className="h-full flex flex-col justify-between border border-card-border/80 hover:border-primary/30 group p-6 min-h-[380px]">
                   <div className="space-y-4 w-full">
                     {/* Icon wrapper */}
                     <div className="w-12 h-12 rounded-xl bg-zinc-900 border border-card-border flex items-center justify-center text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-black transition-all duration-300">
@@ -126,16 +82,16 @@ export default function Services() {
                     <div className="space-y-3 pt-1 text-xs text-left">
                       <div>
                         <span className="text-primary font-bold uppercase tracking-wider text-[9px] block mb-0.5">Who It's For</span>
-                        <p className="text-muted leading-relaxed text-[11px]">{service.forWho}</p>
+                        <p className="text-muted leading-relaxed text-[11px] h-[34px] line-clamp-2">{service.forWho}</p>
                       </div>
                       <div>
                         <span className="text-primary font-bold uppercase tracking-wider text-[9px] block mb-0.5">Why It Matters</span>
-                        <p className="text-muted leading-relaxed text-[11px]">{service.whyMatters}</p>
+                        <p className="text-muted leading-relaxed text-[11px] h-[34px] line-clamp-2">{service.whyMatters}</p>
                       </div>
                       <div>
                         <span className="text-primary font-bold uppercase tracking-wider text-[9px] block mb-1">Expected Deliverables</span>
                         <ul className="grid grid-cols-1 gap-1 text-[11px] text-white/90">
-                          {service.deliverables.map((item, index) => (
+                          {service.deliverables.slice(0, 3).map((item, index) => (
                             <li key={index} className="flex items-center space-x-1.5">
                               <span className="w-1 h-1 rounded-full bg-primary shrink-0" />
                               <span className="truncate">{item}</span>
@@ -144,6 +100,17 @@ export default function Services() {
                         </ul>
                       </div>
                     </div>
+                  </div>
+
+                  {/* Learn More Link button */}
+                  <div className="pt-4 border-t border-card-border/40 mt-4">
+                    <Link
+                      href={`/services/${service.slug}`}
+                      className="inline-flex items-center text-xs font-bold text-primary hover:text-primary-hover group/link transition-colors"
+                    >
+                      Learn More
+                      <ChevronRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover/link:translate-x-0.5" />
+                    </Link>
                   </div>
                 </GlowCard>
               </motion.div>
