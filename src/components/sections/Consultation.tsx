@@ -21,6 +21,7 @@ type FormData = z.infer<typeof formSchema>;
 
 export default function Consultation() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const {
     register,
@@ -40,11 +41,30 @@ export default function Consultation() {
   });
 
   const onSubmit = async (data: FormData) => {
-    // Simulate network API post
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    console.log("Form Submitted:", data);
-    setIsSubmitted(true);
-    reset();
+    setSubmitError(null);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.message || result.error || "Failed to submit request.");
+      }
+
+      console.log("Form Submitted:", result);
+      setIsSubmitted(true);
+      reset();
+    } catch (err) {
+      console.error("Submission error:", err);
+      const errorMessage = err instanceof Error ? err.message : "An unexpected error occurred. Please try again.";
+      setSubmitError(errorMessage);
+    }
   };
 
   const handleWhatsAppBooking = () => {
@@ -262,6 +282,12 @@ export default function Consultation() {
                         </span>
                       )}
                     </div>
+
+                    {submitError && (
+                      <div className="p-3 text-sm text-red-500 bg-red-500/10 border border-red-500/20 rounded-xl">
+                        {submitError}
+                      </div>
+                    )}
 
                     {/* Action buttons */}
                     <div className="flex flex-col sm:flex-row gap-3 pt-2">
