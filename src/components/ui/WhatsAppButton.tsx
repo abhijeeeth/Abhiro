@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import * as analytics from "@/utils/analytics";
 
 export default function WhatsAppButton() {
   const phoneNumber = "916238545696";
@@ -12,6 +13,12 @@ export default function WhatsAppButton() {
       href={url}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => {
+        analytics.event("whatsapp_click", {
+          category: "Contact",
+          label: "Floating Action Button",
+        });
+      }}
       className="fixed bottom-6 right-6 w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-emerald-500/20 transition-shadow duration-300 z-50 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}

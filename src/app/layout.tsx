@@ -2,11 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import LenisProvider from "@/components/LenisProvider";
-import CustomCursor from "@/components/ui/CustomCursor";
-import ScrollProgress from "@/components/ui/ScrollProgress";
-import WhatsAppButton from "@/components/ui/WhatsAppButton";
-import CallButton from "@/components/ui/CallButton";
-import BackToTop from "@/components/ui/BackToTop";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
+import InteractiveProviders from "@/components/InteractiveProviders";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -47,13 +44,10 @@ export default function RootLayout({
         className={`${inter.variable} font-sans antialiased bg-background text-foreground`}
         suppressHydrationWarning
       >
+        <GoogleAnalytics />
         <LenisProvider>
-          <ScrollProgress />
-          <CustomCursor />
+          <InteractiveProviders />
           {children}
-          <CallButton />
-          <WhatsAppButton />
-          <BackToTop />
         </LenisProvider>
       </body>
     </html>

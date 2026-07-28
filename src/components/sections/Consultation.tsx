@@ -7,6 +7,7 @@ import * as z from "zod";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, Mail, MapPin, CheckCircle, MessageSquare } from "lucide-react";
 import GlowCard from "../ui/GlowCard";
+import * as analytics from "@/utils/analytics";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -58,6 +59,10 @@ export default function Consultation() {
       }
 
       console.log("Form Submitted:", result);
+      analytics.event("contact_form_submit", {
+        category: "Contact",
+        label: `${data.business} - ${data.budget}`,
+      });
       setIsSubmitted(true);
       reset();
     } catch (err) {
@@ -68,6 +73,10 @@ export default function Consultation() {
   };
 
   const handleWhatsAppBooking = () => {
+    analytics.event("whatsapp_click", {
+      category: "Contact",
+      label: "Consultation Form Sidebar",
+    });
     const phoneNumber = "916238545696";
     const message = encodeURIComponent("Hi makePortfolio.in! I'd like to book a free web consultation. I want to discuss my website options.");
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");

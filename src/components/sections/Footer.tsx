@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 import Magnetic from "../ui/Magnetic";
 
 export default function Footer() {
@@ -41,21 +42,21 @@ export default function Footer() {
             className="flex flex-wrap items-center justify-center gap-4 pt-4"
           >
             <Magnetic>
-              <a
-                href="#contact"
+              <Link
+                href="/contact"
                 className="inline-flex items-center justify-center px-8 py-3.5 rounded-xl bg-primary hover:bg-primary-hover text-black font-bold transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
               >
                 Get Free Quote
                 <ArrowUpRight className="w-4 h-4 ml-1.5" />
-              </a>
+              </Link>
             </Magnetic>
             <Magnetic>
-              <a
-                href="#contact"
+              <Link
+                href="/contact"
                 className="inline-flex items-center justify-center px-8 py-3.5 rounded-xl bg-zinc-900 border border-card-border hover:bg-zinc-800 text-white font-semibold transition-all duration-300"
               >
                 Contact Us
-              </a>
+              </Link>
             </Magnetic>
           </motion.div>
         </div>
@@ -64,15 +65,15 @@ export default function Footer() {
       {/* FOOTER PROPER */}
       <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
         {/* Column 1: Logo & Tagline */}
-        <div className="md:col-span-4 space-y-4">
-          <a href="#" className="flex items-center space-x-2">
+        <div className="md:col-span-4 space-y-4 text-left">
+          <Link href="/" className="flex items-center space-x-2">
             <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center font-bold text-black">
               m
             </div>
             <span className="text-xl font-bold tracking-tight text-white">
               makePortfolio.in
             </span>
-          </a>
+          </Link>
           <p className="text-sm text-muted leading-relaxed max-w-sm">
             High-converting, lightning-fast, and premium web design services tailored to fit small businesses, personal brands, and startups. We believe everyone deserves a website.
           </p>
@@ -97,31 +98,31 @@ export default function Footer() {
         </div>
 
         {/* Column 2: Navigation Links */}
-        <div className="md:col-span-2 space-y-4">
+        <div className="md:col-span-2 space-y-4 text-left">
           <h3 className="text-sm font-extrabold text-white uppercase tracking-widest">Navigation</h3>
           <ul className="space-y-2.5 text-sm">
-            <li><a href="#" className="text-muted hover:text-primary transition-colors">Home</a></li>
-            <li><a href="#services" className="text-muted hover:text-primary transition-colors">Services</a></li>
-            <li><a href="#portfolio" className="text-muted hover:text-primary transition-colors">Portfolio</a></li>
-            <li><a href="#pricing" className="text-muted hover:text-primary transition-colors">Pricing</a></li>
-            <li><a href="#process" className="text-muted hover:text-primary transition-colors">Our Process</a></li>
+            <li><Link href="/" className="text-muted hover:text-primary transition-colors">Home</Link></li>
+            <li><Link href="/services" className="text-muted hover:text-primary transition-colors">Services</Link></li>
+            <li><Link href="/portfolio" className="text-muted hover:text-primary transition-colors">Portfolio</Link></li>
+            <li><Link href="/pricing" className="text-muted hover:text-primary transition-colors">Pricing</Link></li>
+            <li><Link href="/blog" className="text-muted hover:text-primary transition-colors">Blog Insights</Link></li>
           </ul>
         </div>
 
         {/* Column 3: Services categories */}
-        <div className="md:col-span-3 space-y-4">
+        <div className="md:col-span-3 space-y-4 text-left">
           <h3 className="text-sm font-extrabold text-white uppercase tracking-widest">Our Services</h3>
           <ul className="space-y-2.5 text-sm">
-            <li><a href="#services" className="text-muted hover:text-primary transition-colors">Portfolio Websites</a></li>
-            <li><a href="#services" className="text-muted hover:text-primary transition-colors">Business Websites</a></li>
-            <li><a href="#services" className="text-muted hover:text-primary transition-colors">Landing Pages</a></li>
-            <li><a href="#services" className="text-muted hover:text-primary transition-colors">E-Commerce Shops</a></li>
-            <li><a href="#services" className="text-muted hover:text-primary transition-colors">Performance Tuneup</a></li>
+            <li><Link href="/services/portfolio-websites" className="text-muted hover:text-primary transition-colors">Portfolio Websites</Link></li>
+            <li><Link href="/services/business-websites" className="text-muted hover:text-primary transition-colors">Business Websites</Link></li>
+            <li><Link href="/services/landing-pages" className="text-muted hover:text-primary transition-colors">Landing Pages</Link></li>
+            <li><Link href="/services/ecommerce-websites" className="text-muted hover:text-primary transition-colors">E-Commerce Shops</Link></li>
+            <li><Link href="/services/performance-tuneup" className="text-muted hover:text-primary transition-colors">Performance Tuneup</Link></li>
           </ul>
         </div>
 
         {/* Column 4: Newsletter */}
-        <div className="md:col-span-3 space-y-4">
+        <div className="md:col-span-3 space-y-4 text-left">
           <h3 className="text-sm font-extrabold text-white uppercase tracking-widest">Newsletter</h3>
           <p className="text-xs text-muted leading-relaxed">
             Subscribe to receive website insights, search ranking tips, and custom discount offers directly.
@@ -150,8 +151,8 @@ export default function Footer() {
           &copy; {currentYear} makePortfolio.in Agency. All rights reserved.
         </span>
         <div className="flex items-center space-x-6">
-          <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-          <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+          <Link href="/about" className="hover:text-white transition-colors">Privacy Policy</Link>
+          <Link href="/about" className="hover:text-white transition-colors">Terms of Service</Link>
         </div>
       </div>
     </footer>

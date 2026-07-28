@@ -14,6 +14,7 @@ import FAQSection from "@/components/sections/FAQSection";
 import BlogPreview from "@/components/sections/BlogPreview";
 import Consultation from "@/components/sections/Consultation";
 import Footer from "@/components/sections/Footer";
+import { getSortedPostsData } from "@/utils/blog";
 
 // Schema.org Structured Metadata
 const schemaData = {
@@ -58,6 +59,8 @@ const schemaData = {
 };
 
 export default function Home() {
+  const posts = getSortedPostsData();
+
   return (
     <div className="relative min-h-screen bg-background text-foreground antialiased overflow-hidden">
       {/* Schema LD-JSON */}
@@ -83,7 +86,7 @@ export default function Home() {
         <Team />
         <Testimonials />
         <FAQSection />
-        <BlogPreview />
+        <BlogPreview posts={posts} />
         <Consultation />
       </main>
       <Footer />
