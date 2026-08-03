@@ -16,6 +16,7 @@ const clientLogos = [
   "Momeira Group",
   "Roshni Boutiques",
   "Sachu & Preksha",
+  "Manasa Reddy",
   "Lotus Dental Clinic",
   "Organic Store Inc",
 ];

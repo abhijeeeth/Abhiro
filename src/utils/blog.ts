@@ -5,7 +5,6 @@ import { parseMarkdown, BlogPost, BlogPostMetadata } from "./markdown";
 const blogDirectory = path.join(process.cwd(), "src/content/blog");
 
 export function getSortedPostsData(): BlogPostMetadata[] {
-  // Ensure directory exists
   if (!fs.existsSync(blogDirectory)) {
     return [];
   }
@@ -22,14 +21,7 @@ export function getSortedPostsData(): BlogPostMetadata[] {
       return parsed.metadata;
     });
 
-  // Sort posts by date descending
-  return allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
-      return 1;
-    } else {
-      return -1;
-    }
-  });
+  return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
 export function getPostData(slug: string): BlogPost | null {
@@ -46,3 +38,28 @@ export function getPostData(slug: string): BlogPost | null {
     return null;
   }
 }
+
+export function getAllCategories(): string[] {
+  const posts = getSortedPostsData();
+  const categories = new Set<string>();
+  posts.forEach((post) => {
+    if (post.category) categories.add(post.category);
+  });
+  return Array.from(categories);
+}
+
+export function getAllTags(): string[] {
+  const posts = getSortedPostsData();
+  const tags = new Set<string>();
+  posts.forEach((post) => {
+    if (post.tags) post.tags.forEach((tag) => tags.add(tag));
+  });
+  return Array.from(tags);
+}
+
+export function getPopularPostsData(limit: number = 3): BlogPostMetadata[] {
+  const posts = getSortedPostsData();
+  // Return top items or curated selection
+  return posts.slice(0, limit);
+}
+

@@ -5,6 +5,7 @@ import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 import GlowCard from "@/components/ui/GlowCard";
 import Magnetic from "@/components/ui/Magnetic";
+import SitePreview from "@/components/ui/SitePreview";
 import { portfolioData, Project } from "@/data/portfolioData";
 import {
   ExternalLink,
@@ -195,30 +196,19 @@ export default async function PortfolioDetailPage({ params }: PageProps) {
           </div>
         </section>
 
-        {/* SCREENSHOT REPRESENTATION */}
-        <section className="w-full aspect-[21/9] max-h-[420px] rounded-3xl bg-gradient-to-br from-zinc-900 to-zinc-950 border border-card-border flex items-center justify-center p-8 relative overflow-hidden group">
-          <div className={`absolute inset-0 bg-gradient-to-br ${project.bgGradient} opacity-20`} />
-          <div className="w-[85%] aspect-[16/10] max-h-[300px] rounded-2xl bg-black/60 border border-white/10 shadow-2xl p-4 flex flex-col justify-between z-10 transition-transform duration-500 group-hover:scale-[1.02]">
-            <div className="flex items-center justify-between border-b border-white/5 pb-2 text-[9px] text-muted font-mono">
-              <div className="flex space-x-1">
-                <div className="w-2 h-2 rounded-full bg-white/20" />
-                <div className="w-2 h-2 rounded-full bg-white/20" />
-                <div className="w-2 h-2 rounded-full bg-white/20" />
-              </div>
-              <span className="truncate max-w-[200px]">{project.client}</span>
-            </div>
-            <div className="flex-1 flex flex-col justify-center items-center py-6 text-center">
-              <span className="text-white text-lg font-black tracking-wide">{project.name} App Interface</span>
-              <span className="text-xs text-muted mt-1 max-w-sm truncate">{project.description}</span>
-            </div>
-            <div className="border-t border-white/5 pt-2 flex gap-1.5 overflow-hidden">
-              {project.technologies.slice(0, 3).map((tech) => (
-                <span key={tech} className="text-[7px] font-mono uppercase tracking-widest text-primary/60 px-1 py-0.5 rounded bg-white/5">
-                  {tech}
-                </span>
-              ))}
-            </div>
+        {/* LIVE SITE PREVIEW */}
+        <section className="space-y-4 text-left">
+          <div className="flex items-center justify-between">
+            <h3 className="text-xs uppercase font-extrabold tracking-widest text-primary font-mono">Live Website Preview</h3>
+            <span className="text-xs text-muted font-mono">Interactive Live Frame</span>
           </div>
+          <SitePreview
+            url={project.url}
+            name={project.name}
+            client={project.client}
+            bgGradient={project.bgGradient}
+            className="rounded-3xl border border-card-border p-4 sm:p-8"
+          />
         </section>
 
         {/* LIGHTHOUSE SCORE DASHBOARD */}
