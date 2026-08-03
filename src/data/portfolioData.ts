@@ -269,5 +269,45 @@ export const portfolioData: Project[] = [
       author: "Roshni Shaji",
       role: "Founder, Roshni Boutiques"
     }
+  },
+  {
+    id: 7,
+    slug: "manasa-reddy",
+    name: "Manasa Reddy",
+    url: "https://manasareddy.vercel.app/",
+    category: "Personal Website",
+    description: "Official personal brand portfolio of Manasa Reddy — an aspiring entrepreneur highlighting business vision, milestones, leadership capabilities, and core competencies.",
+    technologies: ["Next.js", "React", "Tailwind CSS", "Framer Motion", "Vercel"],
+    featured: true,
+    client: "Manasa Reddy Personal Brand",
+    bgGradient: "from-amber-900/60 to-yellow-950/80",
+    clientOverview: "Manasa Reddy is an ambitious, forward-thinking aspiring entrepreneur dedicated to learning business ecosystems, solving meaningful problems, and creating impact. She needed an executive personal portfolio to showcase her leadership philosophy, timeline milestones, and vision.",
+    caseStudy: {
+      challenge: "Creating an authoritative personal brand platform that seamlessly combines minimalist luxury styling, dynamic timeline interactions, and core skill showcases.",
+      solution: "Engineered a high-performance Next.js personal website featuring fluid Framer Motion scroll triggers, dark mode contrast optimization, custom gold accent branding (#c5a059), and responsive grid systems.",
+      timeline: "2 Weeks",
+      result: "Launched a pristine personal brand hub with perfect 100/100 Lighthouse scores in accessibility, best practices, and SEO."
+    },
+    lighthouse: {
+      performance: 99,
+      accessibility: 100,
+      bestPractices: 100,
+      seo: 100
+    },
+    seoImprovements: [
+      "Person and ProfilePage JSON-LD schema markup integration",
+      "Open Graph and Twitter Card social media meta tags",
+      "Semantic HTML heading structure and high contrast accessibility standards"
+    ],
+    performanceMetrics: [
+      "LCP (Largest Contentful Paint) under 0.8s on global Vercel CDN",
+      "CLS (Cumulative Layout Shift) locked to 0.0 with web font preloading",
+      "Automated image compression with WebP Next.js image optimization"
+    ],
+    testimonial: {
+      quote: "My portfolio site perfectly captures my vision as a future entrepreneur. The sleek gold aesthetics, interactive timelines, and fluid motion make an unforgettable impression.",
+      author: "Manasa Reddy",
+      role: "Future Entrepreneur & Builder"
+    }
   }
 ];
