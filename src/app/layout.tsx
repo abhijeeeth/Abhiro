@@ -18,6 +18,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  icons: {
+    icon: "/images/logo.png",
+    shortcut: "/images/logo.png",
+    apple: "/images/logo.png",
+  },
   openGraph: {
     title: "makePortfolio.in | Premium Web Development & Design Agency",
     description: "We believe everyone deserves a website. Custom, high-converting sites starting from ₹3,999.",

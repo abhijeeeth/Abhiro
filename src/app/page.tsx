@@ -25,7 +25,7 @@ const schemaData = {
       "@id": "https://makeportfolio.in/#organization",
       "name": "makePortfolio.in Agency",
       "url": "https://makeportfolio.in",
-      "logo": "https://makeportfolio.in/logo.png",
+      "logo": "https://makeportfolio.in/images/logo.png",
       "sameAs": [
         "https://github.com/abhijeeeth",
         "https://www.linkedin.com/in/stabhijith/",

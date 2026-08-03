@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import Magnetic from "../ui/Magnetic";
 
 export default function Footer() {
@@ -66,9 +67,15 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
         {/* Column 1: Logo & Tagline */}
         <div className="md:col-span-4 space-y-4 text-left">
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center font-bold text-black">
-              m
+          <Link href="/" className="flex items-center space-x-2.5">
+            <div className="relative w-8 h-8 rounded-lg overflow-hidden border border-white/10 bg-black/40 flex items-center justify-center">
+              <Image
+                src="/images/logo.png"
+                alt="makePortfolio.in logo"
+                width={32}
+                height={32}
+                className="object-contain w-full h-full"
+              />
             </div>
             <span className="text-xl font-bold tracking-tight text-white">
               makePortfolio.in
