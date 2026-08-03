@@ -58,7 +58,7 @@ export default function BlogIndexPage() {
     "@type": "Organization",
     "name": "makePortfolio.in",
     "url": "https://makeportfolio.in",
-    "logo": "https://makeportfolio.in/logo.png",
+    "logo": "https://makeportfolio.in/images/logo.png",
     "description": "High-performance web design and Next.js development agency in India.",
     "sameAs": [
       "https://twitter.com/makeportfolio",

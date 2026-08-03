@@ -98,7 +98,7 @@ export default async function BlogPostDetailPage({ params }: PageProps) {
       "name": "makePortfolio.in Web Engineering Agency",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://makeportfolio.in/logo.png"
+        "url": "https://makeportfolio.in/images/logo.png"
       }
     },
     "mainEntityOfPage": {
@@ -153,7 +153,7 @@ export default async function BlogPostDetailPage({ params }: PageProps) {
     "@type": "Organization",
     "name": "makePortfolio.in",
     "url": "https://makeportfolio.in",
-    "logo": "https://makeportfolio.in/logo.png"
+    "logo": "https://makeportfolio.in/images/logo.png"
   };
 
   const schemasToInject: object[] = [articleSchema, breadcrumbSchema, organizationSchema];

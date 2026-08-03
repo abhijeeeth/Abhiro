@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Magnetic from "../ui/Magnetic";
 
@@ -36,18 +37,24 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-black/60 backdrop-blur-md border-b border-card-border py-4"
-          : "bg-transparent py-6"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+        ? "bg-black/60 backdrop-blur-md border-b border-card-border py-4"
+        : "bg-transparent py-6"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center space-x-2 group">
-          <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center font-bold text-black transition-transform duration-300 group-hover:rotate-6">
-            m
-          </div>
+        <Link href="/" className="flex items-center space-x-2.5 group">
+          {/* <div className="relative w-8 h-8 rounded-lg overflow-hidden border border-white/10 bg-black/40 flex items-center justify-center transition-transform duration-300 group-hover:rotate-6"> */}
+          <Image
+            src="/images/logo.png"
+            alt="makePortfolio.in logo"
+            width={50}
+            height={50}
+            className="object-contain w-full h-full"
+            priority
+          />
+          {/* </div> */}
           <span className="text-xl font-bold tracking-tight text-white group-hover:text-primary transition-colors">
             makePortfolio.in
           </span>
@@ -61,11 +68,10 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`text-sm font-medium relative py-1 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full ${
-                  isActive
-                    ? "text-primary after:w-full"
-                    : "text-muted hover:text-white after:w-0"
-                }`}
+                className={`text-sm font-medium relative py-1 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full ${isActive
+                  ? "text-primary after:w-full"
+                  : "text-muted hover:text-white after:w-0"
+                  }`}
               >
                 {link.name}
               </Link>
@@ -113,9 +119,8 @@ export default function Navbar() {
                     key={link.name}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className={`text-xl font-medium transition-colors ${
-                      isActive ? "text-primary" : "text-muted hover:text-white"
-                    }`}
+                    className={`text-xl font-medium transition-colors ${isActive ? "text-primary" : "text-muted hover:text-white"
+                      }`}
                   >
                     {link.name}
                   </Link>
